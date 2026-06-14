@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Real-Time Automation Control Panel</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <main id="dashboard-container">
+        <header class="dashboard-header">
+            <h1>Core Automation Engine</h1>
+            <div id="connection-status" class="status-disconnected">Disconnected</div>
+        </header>
+
+        <div class="dashboard-grid">
+            <section id="monitor-section" class="panel">
+                <h2>System Monitor</h2>
+                <div class="monitor-group">
+                    <p>Engine Runtime: <span id="runtime-display">0.00</span> ms</p>
+                    <p>Active Trigger ID: <span id="active-id-display">None</span></p>
+                    <p>Target Object Alpha: <span id="alpha-display">1.0</span></p>
+                </div>
+            </section>
+
+            <section id="control-section" class="panel">
+                <h2>Control Deck</h2>
+                <div class="control-group">
+                    <label for="trigger-select">Select Trigger:</label>
+                    <select id="trigger-select">
+                        <option value="tg_001">Alpha Trigger (ID: 001)</option>
+                    </select>
+                </div>
+                <div class="control-actions">
+                    <button id="execute-btn">Execute Trigger</button>
+                    <button id="reset-btn" class="btn-secondary">Reset Engine</button>
+                </div>
+            </section>
+
+            <section id="visualizer-section" class="panel">
+                <h2>Engine Visualizer</h2>
+                <div class="canvas-area">
+                    <div id="target-object" class="simulated-object">OBJECT_99</div>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <script src="app.js"></script>
+</body>
+</html>
